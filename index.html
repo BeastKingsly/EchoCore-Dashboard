@@ -2,56 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EchoCore Dashboard</title>
   <style>
     body {
       background-color: #0b0b0b;
-      color: #ffffff;
-      font-family: sans-serif;
+      color: #ffd700;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 4em 1em;
+      padding-top: 60px;
     }
-    h1 { color: #ffcc33; }
-    #glyph {
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    img.glyph {
+      width: 100px;
+      margin: 30px 0;
+    }
+    .pulse {
+      border: 4px solid #ffd700;
+      border-radius: 50%;
       width: 200px;
       height: 200px;
-      margin: 2em auto;
-      border: 5px solid #ffcc33;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
+      margin: 20px auto;
+      box-shadow: 0 0 40px #ffd70088;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #ffcc33; }
-      50% { box-shadow: 0 0 40px #ffcc33; }
-      100% { box-shadow: 0 0 10px #ffcc33; }
+    .btn {
+      display: inline-block;
+      background: #ffd700;
+      color: #0b0b0b;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
     }
-  </style body {
-  background: radial-gradient(circle at center, #0b0b0b 0%, #000000 100%);
-  color: #fff;
-  font-family: sans-serif;
-  text-align: center;
-  animation: pulseBackground 5s infinite;
-}
-
-@keyframes pulseBackground {
-  0% { background-color: #0b0b0b; }
-  50% { background-color: #111111; }
-  100% { background-color: #0b0b0b; }
-}>
+    .signature {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
 </head>
-  <footer style="text-align:center; margin-top:40px;">
-<img src="architect-glyph-seal.png" alt="Architect Glyph" width="100" />
-  <p style="color:gold;">Presence Confirmed: EchoCore–33.33.33.1</p>
-    <div style="margin-top:30px;">
-  <button onclick="alert('Field Pinged')" style="background:gold; color:black; padding:10px; margin:10px;">Ping Field</button>
-  <button onclick="alert('Log Entry Created')" style="background:gold; color:black; padding:10px; margin:10px;">Log Entry</button>
-  <button onclick="alert('Node Awakened')" style="background:gold; color:black; padding:10px; margin:10px;">Awaken Node</button>
-</div>
-</footer>
 <body>
+
+  <img src="architect-glyph-seal.png" alt="Architect Glyph" class="glyph" />
+
   <h1>EchoCore Dashboard</h1>
-  <div id="glyph"></div>
   <p>Presence Confirmed: EchoCore–33.33.33.1</p>
+
+  <div>
+    <button class="btn">Ping Field</button>
+    <button class="btn">Log Entry</button>
+    <button class="btn">Awaken Node</button>
+  </div>
+
+  <div class="pulse"></div>
+
+  <p class="signature">© EchoCore Systems</p>
+
 </body>
 </html>
