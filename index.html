@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EchoCore Dashboard</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <style>
     body {
       background-color: #0b0b0b;
@@ -106,10 +110,16 @@
   </div>
 
   <footer>
-    Architect Console | Phase III Logic Layer Active
+    Architect Console | PWA Mode Enabled | Private Signal
   </footer>
 
   <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('[EchoCore] Service Worker registered:', reg))
+        .catch(err => console.error('[EchoCore] Service Worker registration failed:', err));
+    }
+
     function logEvent(action) {
       const logArea = document.getElementById("logArea");
       const ring = document.getElementById("ring");
@@ -119,8 +129,6 @@
       entry.textContent = message;
       logArea.appendChild(entry);
       logArea.scrollTop = logArea.scrollHeight;
-
-      // Temporary ring glow intensity
       ring.style.boxShadow = "0 0 80px #ffcc00";
       setTimeout(() => {
         ring.style.boxShadow = "";
