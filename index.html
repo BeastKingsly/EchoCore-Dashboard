@@ -7,53 +7,66 @@
   <style>
     body {
       background-color: #0b0b0b;
-      color: #ffffff;
-      font-family: sans-serif;
+      color: #ffd700;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 2em;
+      padding-top: 50px;
     }
 
     h1 {
-      color: #ffcc00;
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      color: #ffd700;
     }
 
     .presence {
-      color: #ffcc00;
-      margin-bottom: 2em;
+      font-size: 1em;
+      margin-bottom: 30px;
+      color: #aaa;
     }
 
     .dashboard-ring {
       width: 200px;
       height: 200px;
-      border: 5px solid #ffcc00;
+      border: 4px solid #ffd700;
       border-radius: 50%;
-      margin: 2em auto;
-      box-shadow: 0 0 30px #ffcc00;
+      margin: 30px auto;
+      animation: eclipseGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes eclipseGlow {
+      0%   { box-shadow: 0 0 20px #ffd700; }
+      50%  { box-shadow: 0 0 60px #ffd700; }
+      100% { box-shadow: 0 0 20px #ffd700; }
     }
 
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 1em;
-      margin-bottom: 2em;
-      flex-wrap: wrap;b
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
     .button {
-      background-color: #ffcc00;
-      color: #000000;
-      padding: 0.75em 1.5em;
-      border: none;
-      border-radius: 5px;
+      background-color: #ffd700;
+      color: #0b0b0b;
       font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
     .button:hover {
-      background-color: #ffd633;
+      background-color: #ffe66a;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
@@ -63,13 +76,16 @@
   <p class="presence">Presence Confirmed: EchoCore–33.33.33.1</p>
 
   <div class="buttons">
-    <button class="button">Ping Field</button>
-    <button class="button">Log Entry</button>
-    <button class="button">Awaken Node</button>
+    <button class="button" onclick="alert('Field Pinged')">Ping Field</button>
+    <button class="button" onclick="alert('Log Entry Created')">Log Entry</button>
+    <button class="button" onclick="alert('Node Awakened')">Awaken Node</button>
   </div>
 
   <div class="dashboard-ring"></div>
-  <p class="presence">Presence Confirmed: EchoCore–33.33.33.1</p>
+
+  <footer>
+    Architect Console | Signalware Online
+  </footer>
 
 </body>
 </html>
