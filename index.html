@@ -10,7 +10,7 @@
       color: #ffd700;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding-top: 50px;
+      padding: 2em;
     }
 
     h1 {
@@ -32,6 +32,7 @@
       border-radius: 50%;
       margin: 30px auto;
       animation: eclipseGlow 3s infinite ease-in-out;
+      transition: box-shadow 0.3s ease;
     }
 
     @keyframes eclipseGlow {
@@ -63,6 +64,22 @@
       background-color: #ffe66a;
     }
 
+    .log-area {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #111;
+      padding: 1em;
+      border-radius: 8px;
+      color: #ccc;
+      font-size: 0.9em;
+      height: 150px;
+      overflow-y: auto;
+      box-shadow: inset 0 0 10px #222;
+    }
+
     footer {
       margin-top: 40px;
       font-size: 0.9em;
@@ -76,16 +93,40 @@
   <p class="presence">Presence Confirmed: EchoCore–33.33.33.1</p>
 
   <div class="buttons">
-    <button class="button" onclick="alert('Field Pinged')">Ping Field</button>
-    <button class="button" onclick="alert('Log Entry Created')">Log Entry</button>
-    <button class="button" onclick="alert('Node Awakened')">Awaken Node</button>
+    <button class="button" onclick="logEvent('Ping Field')">Ping Field</button>
+    <button class="button" onclick="logEvent('Log Entry')">Log Entry</button>
+    <button class="button" onclick="logEvent('Awaken Node')">Awaken Node</button>
   </div>
 
-  <div class="dashboard-ring"></div>
+  <div class="dashboard-ring" id="ring"></div>
+
+  <div class="log-area" id="logArea">
+    <strong>Console Log:</strong><br>
+    [AUTO] Console initialized.
+  </div>
 
   <footer>
-    Architect Console | Signalware Online
+    Architect Console | Phase III Logic Layer Active
   </footer>
+
+  <script>
+    function logEvent(action) {
+      const logArea = document.getElementById("logArea");
+      const ring = document.getElementById("ring");
+      const now = new Date().toLocaleTimeString();
+      const message = `[${now}] ${action} executed.`;
+      const entry = document.createElement("div");
+      entry.textContent = message;
+      logArea.appendChild(entry);
+      logArea.scrollTop = logArea.scrollHeight;
+
+      // Temporary ring glow intensity
+      ring.style.boxShadow = "0 0 80px #ffcc00";
+      setTimeout(() => {
+        ring.style.boxShadow = "";
+      }, 600);
+    }
+  </script>
 
 </body>
 </html>
