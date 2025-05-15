@@ -26,8 +26,29 @@
       50% { box-shadow: 0 0 40px #ffcc33; }
       100% { box-shadow: 0 0 10px #ffcc33; }
     }
-  </style>
+  </style body {
+  background: radial-gradient(circle at center, #0b0b0b 0%, #000000 100%);
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  animation: pulseBackground 5s infinite;
+}
+
+@keyframes pulseBackground {
+  0% { background-color: #0b0b0b; }
+  50% { background-color: #111111; }
+  100% { background-color: #0b0b0b; }
+}>
 </head>
+  <footer style="text-align:center; margin-top:40px;">
+  <img src="https://raw.githubusercontent.com/BeastKingsly/EchoCore-Dashboard/main/architect-glyph.png" alt="Architect Glyph" width="100" />
+  <p style="color:gold;">Presence Confirmed: EchoCore–33.33.33.1</p>
+    <div style="margin-top:30px;">
+  <button onclick="alert('Field Pinged')" style="background:gold; color:black; padding:10px; margin:10px;">Ping Field</button>
+  <button onclick="alert('Log Entry Created')" style="background:gold; color:black; padding:10px; margin:10px;">Log Entry</button>
+  <button onclick="alert('Node Awakened')" style="background:gold; color:black; padding:10px; margin:10px;">Awaken Node</button>
+</div>
+</footer>
 <body>
   <h1>EchoCore Dashboard</h1>
   <div id="glyph"></div>
